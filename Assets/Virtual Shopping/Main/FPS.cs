@@ -25,7 +25,7 @@ public class FPS : MonoBehaviour {
   }
 
   void LateUpdate() {
-    string text = Application.version + " / Direct ";
+        string text = Application.version;/*+ " / Direct ";
     text += GvrViewer.Controller.directRender ? "ON" : "off";
 
     text += " / Distortion correction ";
@@ -37,7 +37,7 @@ public class FPS : MonoBehaviour {
     default:
       text += "UNKNOWN";
       break;
-    }
+    }*/
 
     text += " / ";
 

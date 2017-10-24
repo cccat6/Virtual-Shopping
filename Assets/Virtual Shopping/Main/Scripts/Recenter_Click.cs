@@ -14,9 +14,8 @@ public class Recenter_Click : MonoBehaviour {
 		
 	}
 
-    void Clicked()
+    public void Clicked()
     {
-        GvrViewer todo = new GvrViewer();
-        todo.Recenter();
+        GameObject.Find("GvrViewerMain").GetComponent<GvrViewer>().Recenter();
     }
 }

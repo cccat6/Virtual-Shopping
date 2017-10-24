@@ -16,7 +16,8 @@ public class MenuSearch : MonoBehaviour {
 
     public void Clicked()
     {
-        ControlCenter.Voice.SetActive(true);
+        ControlCenter.startListen();
+        //ControlCenter.Voice.SetActive(true);
         //System.Threading.Thread.Sleep(500);
         ControlCenter.Menu.SetActive(false);
     }

@@ -6,54 +6,28 @@ using UnityEngine.UI;
 using Gvr.Internal;
 
 public class PaymentControl : MonoBehaviour {
-    public static string paypassword = null;
-    public static bool shifton = false;
+    private static string paypassword = null;
     private Image image;
-
-    public static void switchshift()
-    {
-        shifton = !shifton;
-    }
+    private string price = null;
+    private bool needInfo = true;
+    private string buyerid = null;
+    private bool paying = false;
+    private string result = null;
+    private GameObject msgbox;
     
     List<GameObject> K = new List<GameObject>();
     void GetKList()
     {
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#1"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#2"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#3"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#4"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#5"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#6"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#7"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#8"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#9"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#10"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#11"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#12"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#13"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#14"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#15"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#16"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#17"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#18"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#19"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#20"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#21"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#22"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#23"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#24"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#25"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#26"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#27"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#28"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#29"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#30"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#31"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#32"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#33"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#34"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#35"));
-    K.Add(GameObject.Find("Payment Canvas/Panel/Keyboard/#36"));
+        K.Add(transform.Find("Panel/Keyboard/#0").gameObject);
+        K.Add(transform.Find("Panel/Keyboard/#1").gameObject);
+        K.Add(transform.Find("Panel/Keyboard/#2").gameObject);
+        K.Add(transform.Find("Panel/Keyboard/#3").gameObject);
+        K.Add(transform.Find("Panel/Keyboard/#4").gameObject);
+        K.Add(transform.Find("Panel/Keyboard/#5").gameObject);
+        K.Add(transform.Find("Panel/Keyboard/#6").gameObject);
+        K.Add(transform.Find("Panel/Keyboard/#7").gameObject);
+        K.Add(transform.Find("Panel/Keyboard/#8").gameObject);
+        K.Add(transform.Find("Panel/Keyboard/#9").gameObject);
     }
     void SetKey(GameObject gameobject,int KeyNum)
     {
@@ -89,84 +63,6 @@ public class PaymentControl : MonoBehaviour {
             case 10:
                 gameobject.transform.Find("Text").GetComponent<Text>().text = "0";
                 break;
-            case 11:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "A";
-                break;
-            case 12:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "B";
-                break;
-            case 13:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "C";
-                break;
-            case 14:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "D";
-                break;
-            case 15:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "E";
-                break;
-            case 16:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "F";
-                break;
-            case 17:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "G";
-                break;
-            case 18:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "H";
-                break;
-            case 19:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "I";
-                break;
-            case 20:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "J";
-                break;
-            case 21:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "K";
-                break;
-            case 22:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "L";
-                break;
-            case 23:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "M";
-                break;
-            case 24:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "N";
-                break;
-            case 25:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "O";
-                break;
-            case 26:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "P";
-                break;
-            case 27:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "Q";
-                break;
-            case 28:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "R";
-                break;
-            case 29:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "S";
-                break;
-            case 30:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "T";
-                break;
-            case 31:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "U";
-                break;
-            case 32:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "V";
-                break;
-            case 33:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "W";
-                break;
-            case 34:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "X";
-                break;
-            case 35:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "Y";
-                break;
-            case 36:
-                gameobject.transform.Find("Text").GetComponent<Text>().text = "Z";
-                break;
             default:
                 gameobject.transform.Find("Text").GetComponent<Text>().text = "#";
                 break;
@@ -175,21 +71,18 @@ public class PaymentControl : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        StartCoroutine(getOrder(transform.Find("Panel").Find("Orderid").gameObject.GetComponent<Text>().text));
         GetKList();
-        //Debug.Log(K);
         List<int> list = new List<int>();
         System.Random rm = new System.Random();
-        //int RmNum = 36;
-        for (int i = 0; i<36; i++)
+        while (list.Count < 10)
         {
-            int num = rm.Next(1, 37);
+            int num = rm.Next(1, 11);
             if (!list.Contains(num))
                 list.Add(num);
-            else
-                i--;
         }
         //以上是为键盘生成随机排序
-        for(int i=0;i<=36;i++)
+        for(int i=0;i<=9;i++)
         {
             SetKey(K[i], list[i]);
         }
@@ -199,20 +92,62 @@ public class PaymentControl : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
-        if (shifton)
+        if (needInfo && price != null)
         {
-            GameObject.Find("Payment Canvas/Panel/Keyboard/Shift/Text").GetComponent<Text>().text = "SHIFT";
+            needInfo = false;
+            transform.Find("Panel").Find("Price").gameObject.GetComponent<Text>().text = "Total:$" + price;
         }
-        else
+        if (paying && result != null)
         {
-            GameObject.Find("Payment Canvas/Panel/Keyboard/Shift/Text").GetComponent<Text>().text = "Shift";
+            paying = false;
+            msgbox.transform.Find("Text").GetComponent<Text>().text = result;
+            Destroy(transform.gameObject);
         }
+    }
 
-        string passshow = null;
-        for (int i = 0; i < paypassword.Length; i++)
+    IEnumerator getOrder(string orderid)
+    {
+        string url = "http://central.holoworld.win/Order.ashx?langNum="+Language.lang.langNum+"&id=" + orderid;
+        WWW getData = new WWW(url);
+        while (!getData.isDone) yield return new WaitForSeconds(0.1f);
+        string result = getData.text;
+        //{"id":"21d71b70-02f8-46d2-8af1-6e50626b9a20","orderid":"201704192218574102","buyerid":"4","goodid":"102","name":"cover boy human","quantity":"1","price":"11.2","operate":[{"time":"20170419221857","change":"OrderBuilt"}],"status":"1","express":null,"tracking":null,"address":"天津市天津市河北区建平镇231 蒋一涛 18840302034"}
+        Debug.Log(result);
+        buyerid = result.Split('\"')[11];
+        price = result.Split('\"')[27];
+        //price = result.Split("price\":\"".ToCharArray())[1].Split('\"')[0];
+        //buyerid = result.Split("buyerid\":\"".ToCharArray())[1].Split('\"')[0];
+    }
+
+    public void addWord(string character)
+    {
+        if (transform.Find("Panel").Find("Password").Find("Password").GetComponent<Text>().text == "Password")
+            transform.Find("Panel").Find("Password").Find("Password").GetComponent<Text>().text = "";
+        transform.Find("Panel").Find("Password").Find("Password").GetComponent<Text>().text += character;
+    }
+    public void backspace()
+    {
+        if (transform.Find("Panel").Find("Password").Find("Password").GetComponent<Text>().text.Length > 0)
+            transform.Find("Panel").Find("Password").Find("Password").GetComponent<Text>().text = transform.Find("Panel").Find("Password").Find("Password").gameObject.GetComponent<Text>().text.Remove(transform.Find("Panel").Find("Password").Find("Password").GetComponent<Text>().text.Length - 1, 1);
+    }
+    public void doPay()
+    {
+        if (transform.Find("Panel").Find("Password").Find("Password").gameObject.GetComponent<Text>().text != "" && buyerid != null)
         {
-            passshow += "*";
+            string url = "http://central.holoworld.win/Pay.ashx?langNum="+Language.lang.langNum+"&id=" + buyerid 
+                + "&order=" + transform.Find("Panel").Find("Orderid").gameObject.GetComponent<Text>().text 
+                + "&pass=" + transform.Find("Panel").Find("Password").Find("Password").gameObject.GetComponent<Text>().text;
+            Debug.Log(url);
+            StartCoroutine(postPay(url));
+            paying = true;
+            msgbox = ControlCenter.ShowMessage(Language.lang.paying);
         }
-        GameObject.Find("Payment Canvas/Panel/Password/Text").GetComponent<Text>().text = (paypassword == "" ? "Password" : passshow);
+    }
+    IEnumerator postPay(string url)
+    {
+        WWW postData = new WWW(url, new byte[] { 0 });
+        string er = postData.error;
+        while (!postData.isDone) yield return new WaitForSeconds(0.1f);
+        result = postData.text;
     }
 }

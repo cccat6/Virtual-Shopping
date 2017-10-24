@@ -16,8 +16,7 @@ public class MenuTrans : MonoBehaviour {
 
     public void Clicked()
     {
-        ControlCenter.Trans.SetActive(true);
-        //System.Threading.Thread.Sleep(500);
-        ControlCenter.Menu.SetActive(false);
+        ControlCenter.transformw();
+        try { Destroy(GameObject.Find("menu_clone")); } catch { }
     }
 }

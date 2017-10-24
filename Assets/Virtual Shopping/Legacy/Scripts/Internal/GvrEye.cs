@@ -242,7 +242,7 @@ public class GvrEye : MonoBehaviour {
       if (customSkybox == null) {
         customSkybox = gameObject.AddComponent<Skybox>();
       }
-      customSkybox.material = monoCameraSkybox.material;
+      //customSkybox.material = monoCameraSkybox.material;
     } else if (customSkybox != null) {
       Destroy(customSkybox);
     }

@@ -16,9 +16,9 @@ public class MoveUI : MonoBehaviour {
 		
 	}
 
-    void Clicked()
+    void Select()
     {
-        Debug.Log(transform.parent.gameObject);
+        //Debug.Log(transform.parent.gameObject);
         ReceiveHand.selected = transform.parent.gameObject;
         /*if (ReceiveHand.selected = transform.parent.gameObject)
         {

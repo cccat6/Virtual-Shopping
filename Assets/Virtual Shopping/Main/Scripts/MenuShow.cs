@@ -16,6 +16,8 @@ public class MenuShow : MonoBehaviour {
 
     public void Clicked()
     {
-        ControlCenter.Menu.SetActive(true);
+        //ControlCenter.search("cover boy human", false ? GoodSearchProxy.queryOrderBy.price : false ? GoodSearchProxy.queryOrderBy.sales : GoodSearchProxy.queryOrderBy.power, true);
+        ControlCenter.menu();
+        //ControlCenter.Menu.SetActive(true);
     }
 }

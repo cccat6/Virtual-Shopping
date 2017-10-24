@@ -68,7 +68,20 @@ public class NohandClick : MonoBehaviour
 
     void Control(bool addorno)
     {
-        if (addorno&& NohandMode)
+        try
+        {
+            ControlCenter.canCircle = true;
+            gameObj.SendMessageUpwards("Select");//用来持续发送选中信息的
+            if (!ControlCenter.canCircle)
+            {
+                duration = 0f;
+                image.fillAmount = duration;
+                ControlCenter.canCircle = true;
+                return;
+            }
+        }
+        catch { }
+        if (addorno && NohandMode)
         {
             duration += 0.015f;
             if (image.fillAmount < 1f)
@@ -87,7 +100,12 @@ public class NohandClick : MonoBehaviour
             }
             if (image.fillAmount == 0f && NohandMode)
             {
-                gameObj.SendMessageUpwards("Clicked");//用Upwards的原因是，有时碰撞到的物体是按钮的子物体，如果这样出bug可以去掉Upward
+                try
+                {
+                    gameObj.SendMessageUpwards("Clicked");//用Upwards的原因是，有时碰撞到的物体是按钮的子物体，如果这样出bug可以去掉Upwards
+                }
+                catch { }
+                duration = 0f;
                 //Debug.Log("Hited " + gameObj);
             }
         }
@@ -98,7 +116,7 @@ public class NohandClick : MonoBehaviour
         }
     }
 
-    public bool DoClick()
+    public static bool DoClick()
     {
         if (!NohandMode)
         {

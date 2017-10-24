@@ -14,7 +14,7 @@
 #if UNITY_EDITOR
 
 using UnityEngine;
-using UnityEditor;
+//using UnityEditor;
 using System.Collections.Generic;
 
 /// @cond
@@ -53,7 +53,7 @@ namespace Gvr.Internal {
     private bool RemoteCommunicating {
       get {
         if (!remoteCommunicating) {
-          remoteCommunicating = EditorApplication.isRemoteConnected;
+          //remoteCommunicating = EditorApplication.isRemoteConnected;
         }
         return remoteCommunicating;
       }

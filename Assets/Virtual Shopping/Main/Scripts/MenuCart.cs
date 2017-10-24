@@ -16,8 +16,7 @@ public class MenuCart : MonoBehaviour {
 
     public void Clicked()
     {
-        ControlCenter.Cart.SetActive(true);
-        //System.Threading.Thread.Sleep(500);
-        ControlCenter.Menu.SetActive(false);
+        ControlCenter.cart();
+        try { Destroy(GameObject.Find("menu_clone")); } catch { }
     }
 }

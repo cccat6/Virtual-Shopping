@@ -380,6 +380,7 @@ public class GvrViewer : MonoBehaviour {
 
   void Start() {
     AddStereoControllerToCameras();
+        //ChangeVRMode();//临时的，为了在编辑器中调试，需要修改
   }
 
   void AddPrePostRenderStages() {
